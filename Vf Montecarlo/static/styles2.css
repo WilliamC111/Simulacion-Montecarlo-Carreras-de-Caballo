@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('Fondo tabla.jpg');
+    background-repeat: repeat;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #696868;
+    border-radius: 8px;
+    background-color: #2d2b2b;
+    background-color: rgba(249, 249, 249, 0.8); /* Ajusta la opacidad */
+    overflow: hidden; /* Asegura que el fondo GIF no se muestre fuera del contenedor */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #454444;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    background-color: #333; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+}
+
+th {
+    background-color: #646161; /* Gris medio */
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #4d5057; /* Azul grisáceo */
+    text-align: center;
+    width: 40%; /* Ajusta el ancho según sea necesario */
+    color: #fff; /* Texto blanco */
+}
+
+/* Agrega este estilo para los botones */
+button {
+    background-color: #37287a; /* Color de fondo verde */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Estilo cuando pasas el mouse sobre el botón */
+button:hover {
+    background-color: #267279; /* Color de fondo verde oscuro */
+    color: white;
+}
+
+/* Estilo cuando haces clic en el botón */
+button:active {
+    background-color: #413e8e; /* Color de fondo verde más oscuro */
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

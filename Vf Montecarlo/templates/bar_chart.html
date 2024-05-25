@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gráfico de Barras</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles3.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Gráfico de Barras - Victorias por Caballo</h1>
+
+    <!-- Canvas para dibujar el gráfico -->
+    <canvas id="bar_chart" style="width: 600px; height: 400px;"></canvas>
+
+    <script>
+        var winnersByHorse = {{ winners_by_horse|tojson }};
+        var horseNames = Object.keys(winnersByHorse);
+        var winsData = Object.values(winnersByHorse);
+
+        // Configuración de los datos para el gráfico de barras
+        var barData = {
+            labels: horseNames,
+            datasets: [{
+                label: 'Cantidad de victorias por caballo',
+                data: winsData,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)', // Color de las barras
+                borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de las barras
+                borderWidth: 1
+            }]
+        };
+
+        // Configuración del gráfico de barras
+        var barConfig = {
+            type: 'bar',
+            data: barData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Cantidad de Victorias'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Caballos'
+                        }
+                    }
+                }
+            }
+        };
+
+        // Dibujar el gráfico de barras
+        var barChart = new Chart(
+            document.getElementById('bar_chart'),
+            barConfig
+        );
+    </script>
+<div style="text-align: center;">
+    <a href="{{ url_for('table_calculate') }}">
+        <button style="background-color: #535159; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; transition-duration: 0.4s; cursor: pointer; border-radius: 8px; border: none;">
+            Volver a resultados
+        </button>
+    </a>
+</div>
+
+
+</body>
+</html>

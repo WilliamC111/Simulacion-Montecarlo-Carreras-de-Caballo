@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla de Resultados</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles2.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados Carreras</h1>
+
+        <h2>Top 3 Caballos</h2>
+        <ol>
+            {% for horse in top_horses %}
+            <li>{{ horse.get_name() }} - {{ horse.get_winning_races() }} victorias</li>
+            {% endfor %}
+        </ol>
+
+        <h2>Victorias por Raza</h2>
+        <ul>
+            <li>PSI: {{ wins_by_breed[0] }}</li>
+            <li>ARABE: {{ wins_by_breed[1] }}</li>
+            <li>CM: {{ wins_by_breed[2] }}</li>
+            <li>APPALOOSA: {{ wins_by_breed[3] }}</li>
+        </ul>
+        
+        <h2>Victorias por Edad</h2>
+        <ul>
+            <li>Menor: {{ wins_by_age[0] }}</li>
+            <li>Igual: {{ wins_by_age[1] }}</li>
+            <li>Mayor: {{ wins_by_age[2] }}</li>
+        </ul>
+        
+        
+        <!-- Botón para dirigirse a la gráfica -->
+        <div style="text-align: center;">
+            <a href="{{ url_for('bar_chart') }}"><button>Ir a gráfica</button></a>
+        </div>
+        <h2>Listado de Caballos Ganadores</h2>
+        <table>
+            <tr>
+                <th>Número de Carrera</th>
+                <th>Caballo Ganador</th>
+                <th>Raza</th>
+                <th>Velocidad</th>
+            </tr>
+            {% for race in races %}
+                {% set winner = race.get_winner() %}
+                {% if winner %}
+                    <tr>
+                        <td>{{ race.get_code() }}</td>
+                        <td>{{ winner.get_name() }}</td>
+                        <td>{{ winner.get_breed() }}</td>
+                        <td>{{ winner.get_speed() }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+
+    </div>
+</body>
+</html>

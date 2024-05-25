@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask app</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+     <!-- Contenedor -->
+     <div class="container">
+        <!-- Imagen -->
+        <img src="{{ url_for('static', filename='logo1.jpg') }}" alt="Imagen">
+
+        <!-- Formulario para ingresar número de carreras -->
+        <form method="POST" action="{{ url_for('carga_indice') }}" enctype="multipart/form-data">
+            <!-- Cuadro de texto para ingresar números enteros -->
+            <input type="number" id="inputNumber" name="inputNumber" placeholder="Ingrese número de carreras" min="1" max="100000">
+            <!-- Botón para iniciar simulación -->
+            <button type="submit">Iniciar simulación</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+        let inputNumber = document.getElementById("inputNumber").value;
+
+        if(!inputNumber){
+            e.preventDefault();
+            alert("Todos los campos son requeridos");
+        }
+    })
+</script>
+</html>

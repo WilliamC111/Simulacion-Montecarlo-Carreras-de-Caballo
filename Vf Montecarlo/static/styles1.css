@@ -1,0 +1,41 @@
+/* Estilos para el cuerpo */
+body {
+    background-image: url('correr4.gif'); /* URL del GIF */
+    background-color: #272d27; /* Fondo verde oscuro */
+    overflow: hidden; /* Oculta el desplazamiento horizontal */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column; /* Ajuste para mostrar las imágenes verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Altura del viewport */
+    position: relative; /* Para ajustar la posición del título */
+}
+
+/* Estilos para el título */
+h1 {
+    color: white; /* Texto blanco */
+    position: absolute; /* Posición absoluta para colocar el título */
+    top: 10px; /* Distancia desde la parte superior */
+}
+
+/* Estilos para cada imagen de caballo */
+.caballo {
+    width: 280px; /* Ancho de cada imagen de caballo */
+    height: 220px; /* Altura automática para mantener la proporción */
+    margin-bottom: 50px; /* Espacio entre las imágenes */
+    animation: mover-caballo 3s linear infinite; /* Animación de movimiento */
+}
+
+/* Animación de movimiento */
+@keyframes mover-caballo {
+    0% {
+        transform: translateX(-100%); /* Comienza fuera de la pantalla arriba */
+    }
+    100% {
+        transform: translateX(100%); /* Se mueve completamente fuera de la pantalla abajo */
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulación de Carrera</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles1.css') }}">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Título centrado -->
+        <h1>Simulación de Carrera</h1>
+        
+        <!-- Contenedor para la línea de salida -->
+        <div class="linea-salida">
+            <!-- Bucle para mostrar 10 imágenes de caballos en dos filas -->
+            <div class="fila-caballos">
+                {% for i in range(1, 6) %}
+                    <img class="caballo" src="{{ url_for('static', filename='caballo' + i|string + '.png') }}" alt="Caballo {{ i }}">
+                {% endfor %}
+            </div>
+            <div class="fila-caballos">
+                {% for i in range(6, 11) %}
+                    <img class="caballo" src="{{ url_for('static', filename='caballo' + i|string + '.png') }}" alt="Caballo {{ i }}">
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Reproductor de audio -->
+        <audio autoplay loop>
+            <source src="{{ url_for('static', filename='Galope.mp3') }}" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <script>
+        // Redireccionar automáticamente a la tabla de resultados después de 15 segundos
+        setTimeout(function() {
+            window.location.href = "/table_calculate";
+        }, 10000); // 15000 milisegundos = 15 segundos
+    </script>
+</body>
+</html>

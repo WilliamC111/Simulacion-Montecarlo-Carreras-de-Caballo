@@ -1,0 +1,48 @@
+/* Estilos para el contenedor */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta el tamaño de la pantalla */
+    margin: 0; /* Elimina el margen predeterminado */
+    background-image: url('fondo.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Cubre todo el contenedor */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-color: #2e2426; /* Fondo oscuro grisáceo */
+}
+
+/* Estilos para la imagen */
+img {
+    width: 500px; /* Tres veces más grande que el tamaño original */
+    margin-bottom: 20px; /* Agrega un margen inferior para separar la imagen del cuadro de texto */
+}
+
+/* Estilos para el cuadro de texto */
+input[type="number"] {
+    padding: 10px 20px; /* Ajusta el espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Margen inferior para separar del botón */
+    width: 250px; /* Ancho del cuadro de texto */
+    background-color: #325e44; /* Color de fondo del cuadro de texto */
+    color: white; /* Color de texto */
+    border: 2px solid #325e44; /* Borde del cuadro de texto */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+/* Estilos para el botón */
+button {
+    padding: 10px 20px; /* Ajusta el espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente */
+    background-color: #325e44; /* Color de fondo del botón */
+    color: white; /* Color de texto */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+button:hover {
+    background-color: #1e2320; /* Cambia el color de fondo al pasar sobre el botón */
+}
